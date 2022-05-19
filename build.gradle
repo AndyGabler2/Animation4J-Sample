@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    maven { url "https://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'main/java'
+        }
+        resources {
+            srcDir 'main/resources'
+        }
+    }
+	test {
+        java {
+            srcDir 'test/java'
+        }
+        resources {
+            srcDir 'test/resources'
+        }
+    }
+}
+
+run {
+    standardInput = System.in
+}
+
+test {
+    // Only true JUnit tests run in build. Meaning main classes can go in test directory.
+    useJUnitPlatform()
+}
+
+mainClassName = 'com.andronikus.animation4jturorial.Main'
+
+group = "io.github.andronikusgametech"
+applicationName = 'Animation4J-Sample'
+version = "1.0.0"
